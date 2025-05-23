@@ -1,0 +1,137 @@
+
+.wrap { padding: 1rem; }
+
+.input-style { display: flex; flex-direction: column; gap: 2rem; padding: 1rem; border: 1px solid #666; border-radius: .4rem; }
+
+
+input[type='text'] { width: 16rem; height: 2.8rem; border: #999 1px solid; border-radius: .4rem; padding: 0 1rem; }
+
+input[type='password'] { width: 16rem; height: 2.8rem; border: #999 1px solid; border-radius: .4rem; padding: 0 1rem; }
+
+input[type='date'] { width: 16rem; height: 2.8rem; border: #999 1px solid; border-radius: .4rem; padding: 0 1rem; background: none; position: relative; }
+input[type='date']::-webkit-clear-button,
+input[type='date']::-webkit-inner-spin-button { display: none; }
+input[type='date']::-webkit-calendar-picker-indicator { position: absolute; top: 0; left: 0; right: 0; bottom: 0; width: auto; height: auto; color: transparent; background-position: right 5px center; background-size: 1.6rem; cursor: pointer; }
+input[type='date']::before { content: attr(data-placeholder); width: 100%; }
+input[type='date']:valid::before { display: none; }
+input[data-placeholder]::before { display: inline-block; line-height: 2.8rem; background-color: #fff; color: #666; position: absolute; top: 0; bottom: 0; left: 0; padding: 0 1rem; }
+
+select { width: 16rem; height: 2.8rem; border: #999 1px solid; border-radius: .3rem; padding: 0 1rem; }
+
+textarea { width: 100%; height: 10rem; max-width: 60rem; border: #999 1px solid; border-radius: .3rem; }
+
+.emailbox {  }
+
+
+/* 체크박스 */
+.checkbox { display: inline-block; position: relative; vertical-align: middle; min-height: 2.4rem; }
+.checkbox input[type='checkbox'] { display: inline-block; width: 0; height: 0; opacity: 0; position: absolute; top: 0; left: 0; }
+.checkbox input[type='checkbox'] + label { display: inline-block; padding-left: 3rem; line-height: 1.4; cursor: pointer; }
+.checkbox input[type='checkbox'] + label::after { content: ""; position: absolute; top: 0; left: 0; width: 2.4rem; height: 2.4rem; border-radius: .4rem; border: violet 1px solid; box-sizing: border-box; }
+.checkbox input[type='checkbox']:checked + label::after { background-color: violet; }
+.checkbox input[type='checkbox'] + label::before { content: ""; z-index: 1; position: absolute; top: .5rem; left: .5rem; border-left: violet 3px solid; border-bottom: violet 3px solid; display: inline-block; width: 1.1rem; height: .6rem; transform: rotate(-45deg); transition: all 0s; }
+.checkbox input[type='checkbox']:checked + label::before { border-left: #fff 3px solid; border-bottom: #fff 3px solid; transition: all .18s; animation: drawCheck .18s ease forwards; }
+/* 체크 애니메이션 정의 */
+@keyframes drawCheck {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  60% {
+    width: 0;
+    height: 0.6rem;
+    opacity: 1;
+  }
+  100% {
+    width: 1.1rem;
+  }
+}
+.checkbox.single { display: inline-block; width: 2.4rem; height: 2.4rem; }
+.checkbox.single input[type='checkbox'] + label i { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+.grid-area { width: 100%; display: flex; flex-wrap: wrap; gap: 1rem 0; }
+.grid-area > span { flex: 1; margin-right: 2rem; }
+
+.grid-area.grid3 > span { flex: none; width: calc(30% - 2rem); }
+.grid-area.grid4 > span { flex: none; width: calc(25% - 2rem); }
+
+
+
+
+/* 라디오 */
+.radiobox { display: inline-block; position: relative; vertical-align: middle; }
+.radiobox input[type='radio'] { display: inline-block; width: 0; height: 0; opacity: 0; position: absolute; top: 0; left: 0; }
+.radiobox input[type='radio'] + label { display: inline-block; padding-left: 3rem; line-height: 1.4; cursor: pointer; }
+.radiobox input[type='radio'] + label::after { content: ""; position: absolute; top: 0; left: 0; width: 2.4rem; height: 2.4rem; border-radius: 50%; border: #666 1px solid; box-sizing: border-box; }
+.radiobox input[type='radio']:checked + label::after { border-color: violet; }
+.radiobox input[type='radio'] + label::before { content: ""; z-index: 1; position: absolute; top: .5rem; left: .5rem; background-color: #999; box-sizing: border-box; display: inline-block; border-radius: 50%; width: 1.4rem; height: 1.4rem; transition: all 0s; }
+.radiobox input[type='radio']:checked + label::before { background-color: violet; transition: all .2s; animation: drawRadio .2s ease forwards; }
+/* 라디오 애니메이션 정의 */
+@keyframes drawRadio {
+  0% {
+    transform: scale(0%);
+  }
+  50% {
+    transform: scale(130%);
+  }
+  100% {
+    transform: scale(100%);
+  }
+}
+
+
+.email-area { display: flex; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.overlay { display: flex; width: 100%; max-width: 92rem; background-color: #eee; justify-content: space-around; }
+.overlay li { padding: 2rem; }
+.overlay li img { display: block; width: 100%; max-width: 100%; }
+.overlay li a { display: block; position: relative; }
+.overlay li a::after { content: ""; transition: all .2s; display: block; position: absolute; top: 100%; bottom: 0; left: 0; right: 0; background-color: rgba(0,0,0,.3); }
+.overlay li a:hover::after { top: 0; }
+
+
+
+
+
+
+
+@media screen and (max-width: 1200px) {
+  .box {
+    border-color: blue;
+  }
+
+}
+/* @media screen and (max-width: 992px) {
+  .box {
+    border-color: blue;
+  }
+}
+@media screen and (max-width: 768px) {
+  .box {
+    border-color: blue;
+  }
+}
+@media screen and (max-width: 576px) {
+  .box {
+    border-color: blue;
+  }
+} */
